@@ -18,7 +18,7 @@
 
 
 
-//#include <stdio.h>
+#include <stdio.h>
 #include "stats.h"
 #define ARRAY_SIZE (40)
 

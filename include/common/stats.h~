@@ -19,8 +19,6 @@
  ****************************************************************************/
  #ifndef _STATS_H_
  #define _STATS_H_
- #include "platform.h"
- 
 //define types to make code more portable
  typedef unsigned char uint_8t;
  typedef unsigned int uint_32t;

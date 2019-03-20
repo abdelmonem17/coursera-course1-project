@@ -1,7 +1,10 @@
 #-----------------------------------------------------------------------
 include sources.mk
 
+PLATFORM=HOST
 TARGET=C1M1
+PASSWORD=-DCOURSE1
+INFO=VERBOSE
 ifeq ($(PLATFORM),MSP432)
 	# Arcitectures spacific flags
 	
@@ -23,7 +26,7 @@ ifeq ($(PLATFORM),MSP432)
 	
 	SRCS=$(MSP432_SRCS)
 	INCLUDES=$(MSP432_INCLUDES)
-	CPPFLAGS=-DMSP432 $(INCLUDES)
+	CPPFLAGS=-DMSP432 -D$(INFO) -D$(PASSWORD) $(INCLUDES)
 	
 
 else
@@ -34,7 +37,7 @@ else
 	CFLAGS=-Wall -Werror -g -O0 -std=c99 
 	LDFLAGS=-Wl,-Map=$(TARGET).map
 	ifeq ($(PLATFORM),HOST)
-		CPPFLAGS=-DHOST $(INCLUDES)
+		CPPFLAGS=-DHOST -DVERBOSE $(PASSWORD) $(INCLUDES)
 	endif
 endif
 
